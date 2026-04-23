@@ -46,7 +46,7 @@ export function SteamDeals() {
     }
   }
 
-  // 🔄 carga inicial + más
+  // 🔄 carga
   useEffect(() => {
     loadDeals(limit === 20)
   }, [limit])
@@ -116,12 +116,12 @@ export function SteamDeals() {
     return finalUSD * exchangeRate
   }
 
-  // ⚡ preload al hover
+  // ⚡ preload
   function handlePreload(href: string) {
     router.prefetch(href)
   }
 
-  // 🧊 skeleton UI
+  // 🧊 skeleton
   function SkeletonCard() {
     return (
       <div className="animate-pulse border rounded-xl p-3 space-y-2">
@@ -150,7 +150,9 @@ export function SteamDeals() {
             : featured.map((game) => {
 
               const finalARS = calculateFinalARS(game.final)
-              const href = `/juego/${slugify(game.name)}-${game.id}`
+
+              // 🔥 clave: enviamos appid directo
+              const href = `/?appid=${game.id}`
 
               return (
 
@@ -215,7 +217,9 @@ export function SteamDeals() {
             : deals.map((game) => {
 
               const finalARS = calculateFinalARS(game.final)
-              const href = `/juego/${slugify(game.name)}-${game.id}`
+
+              // 🔥 clave también acá
+              const href = `/?appid=${game.id}`
 
               return (
 

@@ -1,10 +1,9 @@
-import { Calculator } from "@/components/calculator"
+import CalculatorWrapper from "@/components/calculator-wrapper"
 import { TaxInfoSection } from "@/components/tax-info-section"
 import { FAQSection } from "@/components/faq-section"
 import { AdBanner } from "@/components/ad-banner"
 import { Gamepad2 } from "lucide-react"
 import Link from "next/link"
-
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
-
           <div className="flex items-center gap-3">
 
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -31,7 +29,6 @@ export default function Home() {
             </div>
 
           </div>
-
         </div>
       </header>
 
@@ -42,7 +39,6 @@ export default function Home() {
 
       {/* Hero */}
       <section className="container mx-auto px-4 py-10 md:py-14">
-
         <div className="text-center max-w-3xl mx-auto space-y-5">
 
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
@@ -59,24 +55,19 @@ export default function Home() {
             href="/steam-sales-argentina"
             className="inline-block text-primary font-bold hover:underline"
           >
-             Ver ofertas de Steam
+            Ver ofertas de Steam
           </Link>
 
         </div>
-
       </section>
 
       {/* CALCULATOR */}
       <section className="container mx-auto px-4 pb-16">
-
         <div className="flex justify-center">
-
           <div className="w-full max-w-7xl">
-            <Calculator />
+            <CalculatorWrapper />
           </div>
-
         </div>
-
       </section>
 
       {/* Tax Info */}

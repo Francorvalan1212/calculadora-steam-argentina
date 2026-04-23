@@ -33,12 +33,17 @@ export function Calculator({ initialGame }: { initialGame?: string } = {}) {
 
   const gameFromUrl = searchParams.get("game")
 
+  // ✅ FIX: leer ?appid= que viene desde steam-deals
+  const appIdFromUrl = searchParams.get("appid")
+
   //  SOPORTE SEO + ID
   const rawSlug = params?.slug as string
   const extractedId = rawSlug?.match(/\d+/)?.[0] || ""
 
+  // ✅ FIX: appIdFromUrl tiene prioridad antes que extractedId y gameFromUrl
   const gameParam: string =
     initialGame ??
+    appIdFromUrl ??
     extractedId ??
     gameFromUrl ??
     ""
@@ -169,7 +174,7 @@ export function Calculator({ initialGame }: { initialGame?: string } = {}) {
 
       try{
 
-        // ✔ SI ES ID DIRECTO
+        // ✔ SI ES ID DIRECTO (viene de ?appid= o slug)
         if(/^\d+$/.test(gameParam)){
 
           setSteamUrl(`https://store.steampowered.com/app/${gameParam}`)
@@ -272,9 +277,7 @@ Calculadora de Precio de Steam
 <p className="text-sm text-muted-foreground">
 Precio actualizado con impuestos argentinos y dólar en tiempo real.
 </p>
-<p className="text-xs text-muted-foreground">
-Los precios pueden variar según el tipo de cambio y el método de pago en Argentina.
-</p>
+
 
 {/* SEARCH */}
 <div className="space-y-2">
