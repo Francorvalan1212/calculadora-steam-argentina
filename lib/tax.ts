@@ -1,0 +1,1 @@
+export const TAX_RATE = 0.21 // 61% impuestos reales Argentina
