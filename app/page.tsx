@@ -91,18 +91,56 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-card/50">
-        <div className="container mx-auto px-4 py-8 text-center space-y-2">
+  <div className="container mx-auto px-4 py-10 space-y-6">
 
-          <p className="text-muted-foreground text-sm">
-            Calculadora de impuestos de Steam Argentina 2026
-          </p>
+    {/* Links principales */}
+    <div className="flex flex-wrap justify-center gap-6 text-sm">
 
-          <p className="text-muted-foreground text-xs">
-            Esta herramienta es independiente y no está afiliada a Valve o Steam.
-          </p>
+      <Link href="/" className="hover:underline">
+        Inicio
+      </Link>
 
-        </div>
-      </footer>
+      <Link href="/steam-sales-argentina" className="hover:underline">
+        Ofertas Steam
+      </Link>
+
+      <Link href="/privacy-policy" className="hover:underline">
+        Privacidad
+      </Link>
+
+      <Link href="/terms" className="hover:underline">
+        Términos
+      </Link>
+
+      <Link href="/contact" className="hover:underline">
+        Contacto
+      </Link>
+
+    </div>
+
+    {/* Texto */}
+    <div className="text-center space-y-2">
+
+      <p className="text-muted-foreground text-sm">
+        Calculadora de precios de Steam en Argentina con impuestos actualizados.
+      </p>
+
+      <p className="text-muted-foreground text-xs">
+        Los precios son estimados y pueden variar según el tipo de cambio y método de pago.
+      </p>
+
+      <p className="text-muted-foreground text-xs">
+        Este sitio no está afiliado a Valve ni a Steam.
+      </p>
+
+      <p className="text-muted-foreground text-xs">
+        © {new Date().getFullYear()} Calculadora Steam Argentina
+      </p>
+
+    </div>
+
+  </div>
+</footer>
 
     </main>
   )

@@ -16,6 +16,10 @@ export const metadata: Metadata = {
 
   description:
     "Calcula el precio real de juegos de Steam en Argentina con impuestos y dólar actualizado.",
+  
+  icons: {
+    icon: "/icon.png",
+  },
 
   keywords: [
     "steam argentina precio",
